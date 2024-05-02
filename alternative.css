@@ -181,8 +181,6 @@
   border-radius: 5px;
   position: relative;
   overflow: hidden;
-  animation: AnimateColor 2s ease-out infinite;
-  transition: transform 2s ease-out;
 }
 .button_4::after {
   position: absolute;
@@ -194,6 +192,7 @@
   background: rgba(255, 0, 0, 0.31);
   transform: scaleX(0);
   transform-origin: right;
+  animation: AnimateColor 1s linear infinite;
   transition: transform 2s ease-out;
 }
 .button_4:hover::after {
@@ -201,8 +200,17 @@
   transform-origin: left;
 }
 @keyframes AnimateColor {
+  0% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
   50% {
-    background-color: #c31431ad;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
   }
 }
 /* button four end */
